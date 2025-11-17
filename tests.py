@@ -1,12 +1,12 @@
-from functions.get_files_info import get_files_info
-from functions.get_file_content import get_file_content
-
+# from functions.get_files_info import get_files_info
+# from functions.get_file_content import get_file_content
+from functions.write_file import write_file
 
 def test():
     working_directory = "calculator"
-    print(get_file_content(working_directory, "main.py"))
-    print(get_file_content(working_directory, "pkg/calculator.py"))
-    print(get_file_content(working_directory, "/bin/cat"))
+    print(write_file(working_directory, "lorem.txt", "wait, this isn't lorem ipsum"))
+    print(write_file(working_directory, "pkg/morelorem.txt", "lorem ipsum dolor sit amet"))
+    print(write_file(working_directory, "/tmp/temp.txt", "this should not be allowed"))
 
 if __name__ == "__main__":
     test()
